@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "688393096492",
+    "project_id": "ipharm-55d7e",
+    "storage_bucket": "ipharm-55d7e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:688393096492:android:775de0ffd6278d328b7089",
+        "android_client_info": {
+          "package_name": "com.example.ipharm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "688393096492-n02b2eq188t8gsfjfh1lheghkrorjcor.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDE1x7ZKU7dW2EUQosoe_9fPkuyrP8M3Sc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "688393096492-n02b2eq188t8gsfjfh1lheghkrorjcor.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
