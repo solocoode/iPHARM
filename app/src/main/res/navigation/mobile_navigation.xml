@@ -12,14 +12,21 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.ipharm.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_cart"
+        android:name="com.example.ipharm.ui.cart.CartFragment"
+        android:label="Cart"
+        tools:layout="@layout/fragment_cart" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.ipharm.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_prescription"
+        android:name="com.example.ipharm.ui.prescrptions.PrescriptionsFragment"
+        android:label="Prescriptions"
+        tools:layout="@layout/fragment_prescriptions" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.ipharm.ui.profile.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+
 </navigation>

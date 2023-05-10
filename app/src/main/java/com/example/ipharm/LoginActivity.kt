@@ -34,7 +34,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         tv_tosignup.setOnClickListener {
-            val intent = Intent(this, HomeActivity::class.java)
+            val intent = Intent(this, SignupActivity::class.java)
             startActivity(intent)
             finish()
         }
@@ -51,7 +51,7 @@ class LoginActivity : AppCompatActivity() {
         val pass = edt_Password.text.toString()
         auth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(this) {
             if (it.isSuccessful){
-                Toast.makeText(this, "Successfully Loggin in", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Successfully Logged in", Toast.LENGTH_SHORT).show()
             }else
                 Toast.makeText(this, "Log in failed", Toast.LENGTH_SHORT).show()
         }
