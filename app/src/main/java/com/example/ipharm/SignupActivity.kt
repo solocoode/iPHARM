@@ -7,7 +7,11 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import com.example.ipharm.databinding.ActivitySignupBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class SignupActivity : AppCompatActivity() {
     lateinit var edt_username: EditText
@@ -19,6 +23,7 @@ class SignupActivity : AppCompatActivity() {
     lateinit var tv_colorlogin: TextView
 
     lateinit var auth: FirebaseAuth
+    lateinit var firestore: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +38,7 @@ class SignupActivity : AppCompatActivity() {
         tv_colorlogin = findViewById(R.id.tv_colorlogin)
 
         auth = FirebaseAuth.getInstance()
+        firestore = FirebaseFirestore.getInstance()
 
         tv_tologin.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
@@ -61,6 +67,10 @@ class SignupActivity : AppCompatActivity() {
         auth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener(this){
             if (it.isSuccessful){
                 Toast.makeText(this, "Account created successfully", Toast.LENGTH_SHORT).show()
+                //redirect user to home activity
+                val intent = Intent(this, HomeActivity::class.java)
+                startActivity(intent)
+                finish()
             }else{
                 Toast.makeText(this, "Failed to create user", Toast.LENGTH_SHORT).show()
             }

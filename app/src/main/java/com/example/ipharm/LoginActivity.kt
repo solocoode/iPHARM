@@ -52,8 +52,17 @@ class LoginActivity : AppCompatActivity() {
         auth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(this) {
             if (it.isSuccessful){
                 Toast.makeText(this, "Successfully Logged in", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, HomeActivity::class.java)
+                startActivity(intent)
             }else
                 Toast.makeText(this, "Log in failed", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    private fun isLoginValid(username: String, password: String): Boolean {
+        // Perform validation, such as checking against a database or API
+
+        // Return true if the login is successful, false otherwise
+        return true
     }
 }

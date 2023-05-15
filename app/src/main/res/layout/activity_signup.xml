@@ -110,7 +110,7 @@
         android:layout_height="75dp"
         android:layout_marginTop="30dp"
         android:backgroundTint="#22c7c7"
-        android:text="Login"
+        android:text="Sign up"
         android:textColor="@color/white"
         android:textSize="15sp"
         android:textStyle="bold"

@@ -7,18 +7,81 @@
     tools:context=".ui.profile.ProfileFragment">
 
 
-    <TextView
-        android:id="@+id/text_home"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:text="PROFILE"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <EditText
+        android:id="@+id/edtFirstandLastName"
+        android:layout_width="340dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/background_profile"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="First &amp; Last Name"
+        android:textSize="15dp"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.00" />
+        tools:ignore="TextSizeCheck" />
+
+    <EditText
+        android:id="@+id/edtEmailProfile"
+        android:layout_width="340dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/background_profile"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textEmailAddress"
+        android:hint="E-mail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtFirstandLastName" />
+
+    <EditText
+        android:id="@+id/edtPhoneProfile"
+        android:layout_width="340dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/background_profile"
+        android:ems="10"
+        android:inputType="phone"
+        android:hint="Phone Number"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtEmailProfile" />
+
+    <EditText
+        android:id="@+id/edtPostalAddress"
+        android:layout_width="340dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/background_profile"
+        android:ems="10"
+        android:inputType="textPostalAddress"
+        android:hint="Address"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtPhoneProfile" />
+
+    <Button
+        android:id="@+id/btn_saveprofile"
+        android:layout_width="340dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:text="Save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtPostalAddress"/>
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="340dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="200dp"
+        android:text="Logout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_saveprofile"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,9 +1,7 @@
 package com.example.ipharm.ui.home
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
+import android.os.Bundle
 import androidx.lifecycle.ViewModel
-
 class HomeViewModel : ViewModel() {
 
 

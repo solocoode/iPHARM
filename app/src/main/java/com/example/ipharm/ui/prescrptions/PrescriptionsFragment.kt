@@ -37,3 +37,5 @@ class PrescriptionsFragment : Fragment() {
         _binding = null
     }
 }
+// upload prescription button should access camera to take a picture of prescription and store in firebase
+// upload data to fire base and retrive them and display them in the recyleview
