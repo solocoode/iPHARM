@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.ipharm.R
 
+@Suppress("DEPRECATION")
 class ProfileFragment : Fragment() {
 
     companion object {

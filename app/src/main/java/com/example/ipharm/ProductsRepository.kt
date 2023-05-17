@@ -1,12 +1,21 @@
 package com.example.ipharm
 
+import android.graphics.BitmapFactory
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.lifecycle.MutableLiveData
-import com.example.ipharm.Products
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.google.firebase.database.*
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 
 class ProductsRepository {
 
+
     private val databaseReference : DatabaseReference = FirebaseDatabase.getInstance().getReference("products")
+
+
+
 
     @Volatile private var INSTANCE : ProductsRepository ?= null
 
@@ -52,6 +61,8 @@ class ProductsRepository {
 
         })
 
-
     }
+    
+
 }
+

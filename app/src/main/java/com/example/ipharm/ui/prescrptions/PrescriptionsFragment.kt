@@ -36,6 +36,11 @@ class PrescriptionsFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+    }
 }
+
 // upload prescription button should access camera to take a picture of prescription and store in firebase
 // upload data to fire base and retrive them and display them in the recyleview

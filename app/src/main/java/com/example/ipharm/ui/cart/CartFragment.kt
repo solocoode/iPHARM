@@ -4,9 +4,19 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
+import com.example.ipharm.MyAdapter
+import com.example.ipharm.ProductViewModel
+import com.example.ipharm.R
 import com.example.ipharm.databinding.FragmentCartBinding
+import com.example.ipharm.ui.home.adapter
+import com.example.ipharm.ui.home.userRecyclerView
+import com.example.ipharm.ui.home.viewModel
 
 class CartFragment : Fragment() {
 
@@ -35,4 +45,7 @@ class CartFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+
+
 }

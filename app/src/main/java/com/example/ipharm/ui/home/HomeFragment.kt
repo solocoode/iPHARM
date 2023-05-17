@@ -5,27 +5,36 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.ActionOnlyNavDirections
+import androidx.navigation.NavDirections
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ipharm.MyAdapter
 import com.example.ipharm.ProductViewModel
 import com.example.ipharm.Products
 import com.example.ipharm.R
 import com.example.ipharm.databinding.FragmentHomeBinding
-import com.google.firebase.database.*
+import java.util.*
 
 
-private lateinit var viewModel : ProductViewModel
-private lateinit var userRecyclerView: RecyclerView
+lateinit var viewModel : ProductViewModel
+lateinit var userRecyclerView : RecyclerView
 lateinit var adapter: MyAdapter
+private lateinit var searchView: SearchView
+
+
+
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private var _binding: FragmentHomeBinding? = null
+
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -37,7 +46,11 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         savedInstanceState: Bundle?
     ): View {
         return inflater.inflate(R.layout.fragment_home, container, false)
+        searchView = requireView().findViewById(R.id.searchView)
     }
+
+    lateinit var productList: ArrayList<Products>
+
 
     override fun onDestroyView() {
         super.onDestroyView()
@@ -53,6 +66,16 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         adapter = MyAdapter()
         userRecyclerView.adapter = adapter
 
+        adapter.setOnItemClickListener(object : MyAdapter.onItemCickListener{
+
+            override fun onItemClick(position: Int) {
+
+                Toast.makeText(requireActivity(), "You clicked on $position", Toast.LENGTH_SHORT).show()
+
+            }
+
+        })
+
         viewModel = ViewModelProvider(this).get(ProductViewModel::class.java)
 
         viewModel.allProducts.observe(viewLifecycleOwner, Observer {
@@ -62,8 +85,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         })
 
     }
-
 }
+
+
 
 
 

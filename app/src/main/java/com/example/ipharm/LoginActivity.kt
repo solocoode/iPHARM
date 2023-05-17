@@ -49,6 +49,10 @@ class LoginActivity : AppCompatActivity() {
     private fun login() {
         val email = edt_email.text.toString()
         val pass = edt_Password.text.toString()
+        if (email.isBlank() || pass.isBlank()){
+            Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show()
+            return
+        }
         auth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(this) {
             if (it.isSuccessful){
                 Toast.makeText(this, "Successfully Logged in", Toast.LENGTH_SHORT).show()
@@ -59,10 +63,5 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun isLoginValid(username: String, password: String): Boolean {
-        // Perform validation, such as checking against a database or API
 
-        // Return true if the login is successful, false otherwise
-        return true
-    }
 }

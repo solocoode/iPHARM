@@ -22,8 +22,7 @@
             android:layout_marginStart="2dp"
             android:layout_marginTop="2dp"
             android:layout_marginEnd="2dp"
-            android:layout_marginBottom="2dp"
-            android:src="@drawable/java" />
+            android:layout_marginBottom="2dp" />
 
         <TextView
             android:id="@+id/tV_producttitle"
